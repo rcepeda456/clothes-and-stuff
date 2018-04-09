@@ -1,8 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
+  <head>
+      <meta charset= "UFT-8">
+      <title> RR </title>
+      <meta name="author" content= "Richardson De Leon">
+      <meta name="description" content= "Clothing website">
+      <meta name="keywords" content="Clothes">
 
+  </head>
+<style>
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family:sans-serif;
+}
+#sidebar {
+    background:#151718;
+    width:200px;
+    height:100%;
+    display:block;
+    position:absolute;
+    left:-200px;
+    top:0px;
+    transition:left 0.3s linear;
+}
+#sidebar.visible{
+    left:0px;
+    transition:left 0.3s linear;
+}
+
+ul {
+    margin:0px;
+    padding:0px;
+}
+
+ul li {
+    list-style:none;
+}
+
+ul li a{
+    background:#1C1E1F;
+    color:#ccc;
+    border-bottom:1px solid #111;
+    display:block;
+    width:180px;
+    padding:10px;
+    text-decoration:none;
+}
+
+#sidebar-btn{
+    display:inline-block;
+    vertical-align:middle;
+    width:20px;
+    height:15px;
+    cursor:pointer;
+    margin:20px;
+    position: absolute;
+    top:0px;
+    right:-60px;
+}
+
+#sidebar-btn span{
+    height:1px;
+    background:#111;
+    margin-bottom:5px;
+    display:block;
+}
+
+#sidebar-btn span:nth-child(2){
+    width:75%;
+}
+
+#sidebar-btn span:nth-child(3){
+    width:50%;
+}
     @import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
 
     @import url(https://fonts.googleapis.com/css?family=Lato:400,300,900,700);
@@ -136,9 +208,38 @@
 
 
 
+
 </style>
 <body>
-  <a href="webproject1.html"> Mens  </a> || <a href="wpg.html">Womens </a> || <a href="uoa.html"> Accessories </a>
+  <div id="sidebar">
+      <ul>
+          <li><a href="webproject1.html">Home</a></li>
+          <li><a href="webproject1.html">Men</a></li>
+          <li><a href="wpg.html">Women</a></li>
+          <li><a href="uoa.html">Accessories</a></li>
+      </ul>
+
+      <div id="sidebar-btn">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+      </div>
+  </div>
+
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+  <script>
+      $(document).ready(function(){
+          $('#sidebar-btn').click(function(){
+              $('#sidebar').toggleClass('visible');
+
+          });
+      })
+  </script>
+  </body>
+
+
+
   <div class="row">
     <div class="column">
       <img src="UOmaletops.jpg" alt="Mens Tops" style="width:100%">
@@ -150,6 +251,7 @@
       <img src="outwearmens.jpeg" alt="Outterwear" style="width:100%">
     </div>
   </div>
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
